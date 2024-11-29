@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>tareaContinua2</title>
+    </head>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        background: linear-gradient(to right, yellow, black);
+    }
+</style>
+
+    <body>
+        <script>
+        /*
+            2.- Crea la lista de contactos en un array, de tal manera que cada uno de sus elementos
+            será un objeto que describa a un solo usuario (tres propiedades).
+            Al final de la lista declarada de esta manera, agrega un nuevo contacto usando un
+            método de array, apropiado. El nuevo contacto es: Maisie Haley / 0913 531 3030 /
+            risus.Quisque@urna.ca.
+            Muestra el primer y último contacto, de nuevo en el formato: nombre / teléfono / correo
+            electrónico. (length)
+        */
+
+        let listaContactos = [
+            { nombre: "Maxwell Wright", telefono: "(0191) 719 6495", correo: "Curabitur.egestas.nunc@nonummyac.com" },
+            { nombre: "Raja Villareal", telefono: "0866 398 2895", correo: "posuere.vulputate@sed.com" },
+            { nombre: "Helen Richards", telefono: "0800 1111", correo: "libero@convallis.edu" }];
+
+        listaContactos.push({
+            nombre: "Maisie Haley", telefono: "0913 531 3030", correo: " risus.Quisque@urna.ca"
+        });
+
+
+        alert("Primer contacto:\n" + "Nombre: " + listaContactos[0].nombre + " / " + "\nTeléfono: " + listaContactos[0].telefono + " / " + "\nCorreo: " + listaContactos[0].correo);
+        document.write("Primer contacto:<br>" + listaContactos[0].nombre + "<br>" + listaContactos[0].telefono + "<br>" + listaContactos[0].correo + "<br><br>");
+
+        alert("Último contacto:\n" + "Nombre: " + listaContactos[listaContactos.length - 1].nombre + " / " + "\nTeléfono: " + listaContactos[listaContactos.length - 1].telefono + " / " + "\nCorreo: " + listaContactos[listaContactos.length - 1].correo);
+        document.write("Último contacto:<br>" + listaContactos[listaContactos.length - 1].nombre + "<br>" + listaContactos[listaContactos.length - 1].telefono + "<br>" + listaContactos[listaContactos.length - 1].correo);
+
+    </script>
+    </body>
+
+</html>
