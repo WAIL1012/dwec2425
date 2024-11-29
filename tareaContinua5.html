@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea Continua 5</title>
+
+</head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            background: linear-gradient(to right, yellow, black);
+        }
+    </style>
+<body>
+    
+    <script>
+        /* 
+          5.- Encierra todo el programa en un bucle para que al usuario se le pregunte
+            repetidamente qué quiere hacer. El usuario puede optar por:
+            • Mostrar el primer contacto (primero)
+            • Mostrar el último contacto (último)
+            • Mostrar todos los contactos (todos)
+            • Añadir un nuevo contacto (nuevo)
+            • Salir del programa (salir)
+            Después de ejecutar la acción seleccionada, el programa le dará la oportunidad de elegir
+            nuevamente. El programa debe finalizar las acciones solo después de que el usuario dé
+            un comando específico (salir).
+        */
+
+        let listaContactos = [
+            { nombre: "Maxwell Wright", telefono: "(0191) 719 6495", correo: "Curabitur.egestas.nunc@nonummyac.com" },
+            { nombre: "Raja Villareal", telefono: "0866 398 2895", correo: "posuere.vulputate@sed.com" },
+            { nombre: "Helen Richards", telefono: "0800 1111", correo: "libero@convallis.edu" }
+        ];
+
+        let salir = false;
+        let limite = listaContactos.length;
+
+        do{
+            let opcion = prompt("¿Qué quieres hacer?\n1. Mostrar el primer contacto\n2. Mostrar el último contacto\n3. Mostrar todos los contactos\n4. Añadir un nuevo contacto\n5. Salir del programa");
+
+            switch (opcion) {
+                case "1":
+                    alert("Primer contacto:\n" + "Nombre: " + listaContactos[0].nombre + " / " + "\nTeléfono: " + listaContactos[0].telefono + " / " + "\nCorreo: " + listaContactos[0].correo);
+                    document.write("Primer contacto:<br>" + listaContactos[0].nombre + "<br>" + listaContactos[0].telefono + "<br>" + listaContactos[0].correo + "<br><br>");
+                break;
+
+                case "2":
+                    alert("Último contacto:\n" + "Nombre: " + listaContactos[limite - 1].nombre + " / " + "\nTeléfono: " + listaContactos[limite - 1].telefono + " / " + "\nCorreo: " + listaContactos[limite - 1].correo);
+                    document.write("Último contacto:<br>" + listaContactos[limite - 1].nombre + "<br>" + listaContactos[limite - 1].telefono + "<br>" + listaContactos[limite - 1].correo);
+                break;
+
+                case "3":
+                    alert("Todos los contactos:");
+                    document.write("Todos los contactos:<br>");
+                    for (let i = 0; i < limite; i++) {
+                        document.write(listaContactos[i].nombre + "<br>" + listaContactos[i].telefono + "<br>" + listaContactos[i].correo + "<br><br>");
+                        alert("Nombre: " + listaContactos[i].nombre + " / " + "\nTeléfono: " + listaContactos[i].telefono + " / " + "\nCorreo: " + listaContactos[i].correo);  
+                    }
+                    
+                break;
+                case "4":
+                    let nuevoContacto = {
+                        nombre: prompt("Introduce el nombre del nuevo contacto:"),
+                        telefono: prompt("Introduce el teléfono del nuevo contacto:"),
+                        correo: prompt("Introduce el correo del nuevo contacto:")
+                    };
+
+                    if (nuevoContacto.nombre && nuevoContacto.telefono && nuevoContacto.correo) {
+                        listaContactos.push(nuevoContacto);
+                        alert("Contacto añadido correctamente.");
+                    } else {
+                        alert("No se ha podido añadir el contacto. Debes introducir todos los datos.");
+                    }
+                break;
+
+                case "5":
+                    salir = true;
+                break;
+
+                default:
+                    alert("Opción no válida.");
+                break;
+
+            }
+
+        }while(salir != true);
+
+    </script>
+
+</body>
+
+</html>
