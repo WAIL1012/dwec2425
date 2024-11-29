@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea Continua 7</title>
+    
+</head>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            background: linear-gradient(to right, yellow, black);
+        }
+    </style>
+
+<body>
+    <script>
+    /* 
+        7.- Da al usuario la opción de seleccionar una acción sort de la lista. Cuando se selecciona
+        esta opción, el usuario debería poder especificar si desea ordenar los contactos por
+        nombre, teléfono o correo electrónico.
+    */
+
+
+
+    function mostrarContactos() {
+        let mensaje = "Lista de contactos: \n";
+        for (let i = 0;limite = listaContactos.length, i < limite; i++) {
+            mensaje += `${i + 1}. ${listaContactos[i].nombre} - ${listaContactos[i].telefono} - ${listaContactos[i].correo} \n`;
+        }
+        alert(mensaje);
+    }
+
+    function ordenarContactos() {
+        let opcion = prompt("Seleccione una opción para ordenar: \n1. Nombre \n2. Teléfono \n3. Correo electrónico");
+        switch (opcion) {
+            case "1":
+                listaContactos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+                break;
+            case "2":
+                listaContactos.sort((a, b) => a.telefono.localeCompare(b.telefono));
+                break;
+            case "3":
+                listaContactos.sort((a, b) => a.correo.localeCompare(b.correo));
+                break;
+            default:
+                alert("Opción no válida");
+                break;
+        }
+    }
+
+    let listaContactos = [
+            { nombre: "Maxwell Wright", telefono: "(0191) 719 6495", correo: "Curabitur.egestas.nunc@nonummyac.com" },
+            { nombre: "Raja Villareal", telefono: "0866 398 2895", correo: "posuere.vulputate@sed.com" },
+            { nombre: "Helen Richards", telefono: "0800 1111", correo: "libero@convallis.edu" }
+    ];
+
+    let salir = false;
+
+    while (!salir) {
+        let opcion = prompt("Seleccione una opción: \n1. Mostrar contactos \n2. Ordenar contactos \n3. Salir");
+
+        switch (opcion) {
+            case "1":
+                mostrarContactos();
+                break;
+            case "2":
+                ordenarContactos();
+                break;
+            case "3":
+                salir = true;
+                document.write("!!Gracias por usar el programa!!");
+                break;
+            default:
+                alert("Opción no válida");
+                break;
+        }
+    }
+
+    </script>    
+</body>
+
+</html>
